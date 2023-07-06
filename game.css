@@ -1,0 +1,27 @@
+body
+{
+	background: linear-gradient(to bottom left, lightblue, rgb(23, 117, 224), rgb(52, 9, 211), rgb(128, 38, 247), rgb(223, 14, 241));
+}
+
+	.login
+	{
+		background: white;
+		padding: 10px;
+		float: none;
+		border-width: 10px;
+        border-radius: 10px;
+        border-color: black;
+        text-align: center;
+        margin-top: 70px;
+    }
+	
+
+#output
+{
+background: white;
+border-radius: 10px;
+border-top: 10px solid #AA4465;
+padding: 10px;
+float: none;
+text-align: left;
+}
