@@ -45,23 +45,22 @@
 
           // is it Hard
           b = easy1(op,no1,no2);
-          h = [b[0], b[1], b[2]];
-          console.log( h.length+" ",h )
-          if(h[0] == false ){
-               console.log("question is not hard")
+
+          if(b[0] == true ){
+              
                //question assigning
           
-                 row = h[1];
+                 row = b[1];
                  console.log(row);
     
                  document.getElementById("put").innerHTML = row;
-                 ansq = h[2];
+                 ansq = b[2];
                  console.log(ansq);
     
                  // making div vissible
          
                 input1.style.display ="none";
-                document.getElementById("at").innerHTML = p2n+" Please Wright The Answer In Input.";
+                document.getElementById("at").innerHTML = p2n+" Please Write The Answer In Input.";
           }
         }
       })
@@ -71,16 +70,21 @@
   input2.addEventListener("keypress",function(event){
    if(event.key == "Enter"){
      answer = document.getElementById("ans").value
+     console.log(answer)
           
       if(ansq == answer){
         if(questiont == 1){
           questiont = 2;
           score2++
+          console.log(p1n+" got "+score2+" points")
+          document.getElementById("p2_n").innerHTML = p2up;
           setupq()
         }
         else{
           questiont = 1;
           score1++
+          console.log(p2n+" got "+score2+" points")
+          document.getElementById("p1_n").innerHTML = p1up;
           setupq()
         }    
       }else{
@@ -111,7 +115,7 @@ function ans(op,n1,n2){
       result = n1/n2 ;
       break;
     default :
-      result = "NaN"
+      result = "Error"
   }
 
   return result;
@@ -138,13 +142,13 @@ function easy1(op,n1,n2){
       type = n2+" "+op+" "+n1+" = ______";
       answ = ans(op,n2,n1);
       console.log(n2+op+n1," is not hard")
-      return true, type, answ;
+      return [true, type, answ];
     }
     else{
       type = n1+" "+op+" "+n2+" = ______";
       answ = ans(op,n1,n2);
       console.log(n1+op+n2," is not hard")
-      return true, type, answ;
+      return [true, type, answ];
     }
   }
   else if(hard(op,n1,n2) == true ){
@@ -158,14 +162,14 @@ function easy1(op,n1,n2){
       type = n2+" "+op+" "+n1+" = ______";
       answ = ans(op,n2,n1);
       console.log(n2+op+n1," is not hard")
-      return true, type, answ;
+      return [true, type, answ];
     }
   }
   else{
       type = n1+" "+op+" "+n2+" = ______";
       answ = ans(op,n1,n2);
       console.log(n1+op+n2," is not hard")
-      return true, type,answ;
+      return [true, type, answ];
   }
 }
 
@@ -183,11 +187,13 @@ function setupq(){
     document.getElementById("output").style.display = "none";
     document.getElementById("at").style.display = "none";
     document.getElementById("qat").style.display = "block";
+    input1.style.display = "block";
   }
   else{
     qturn.innerHTML = p1n+s+"Please Enter The Question In Folloing Input.";
     document.getElementById("output").style.display = "none";
     document.getElementById("at").style.display = "none";
     document.getElementById("qat").style.display = "block";
+    input1.style.display = "block";
   }
 }
