@@ -24,4 +24,55 @@ border-top: 10px solid #AA4465;
 padding: 10px;
 float: none;
 text-align: left;
+display: none;
+}
+.t
+{
+	background-color: rgb(0, 0, 0);
+	color: rgb(231, 153, 53);
+	text-shadow: 0px 0px 5px white;
+	width: 500px;
+	border: 3px solid rgb(255, 255, 255);
+	border-radius: 25px;
+	box-shadow: 0px 0px 15px 10px white;
+	margin-top: 20;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.o
+{
+	background-color: rgba(255, 255, 255, 0.603);
+	color: rgba(0, 255, 5, 0.571);
+	text-shadow: 0px 0px 5px rgb(0, 0, 0);
+	width: 250px;
+	border: 3px solid rgba(123, 21, 21, 0.452);
+	border-radius: 5px;
+	box-shadow: 0px 0px 15px 10px white;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.q
+{
+	background-color: rgba(255, 200, 0, 0.86);
+	color: rgba(0, 0, 0, 0.365);
+	text-shadow: 0px 0px 5px rgb(0, 0, 0);
+	width: 500px;
+	border: 3px solid rgba(245, 65, 65, 0.739);
+	border-radius: 5px;
+	box-shadow: 0px 0px 15px 10px rgb(161, 38, 38);
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.a
+{
+	background-color: rgba(17, 255, 0, 0.86);
+	color: rgb(255, 255, 255);
+	text-shadow: 0px 0px 10px rgb(0, 0, 0);
+	width: 500px;
+	border: 3px solid rgba(3, 255, 242, 0.739);
+	border-radius: 5px;
+	box-shadow: 0px 0px 15px 10px rgb(50, 161, 38);
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	display: none;
+}
+#ques
+{
+   display: inline;
 }
