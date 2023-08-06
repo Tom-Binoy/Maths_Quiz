@@ -10,12 +10,7 @@
    score2 = 0;
    questiont = 1;
    s =" "
-   
-
-  // score and name updating variables
-   p1up = score1+s+"points for "+p1n;
-   p2up = score2+s+"points for "+p2n;
-
+   pn = "";
 
     // input location
     input1 = document.getElementById("ques")
@@ -38,7 +33,8 @@
           no2 = Number(split[1]);
    
           // random operator seletion
-          op = Math.floor(Math.random()*5)
+          op = Math.floor(Math.random()*4)
+          console.log(op)
    
           // random operator seletion
           op = operator1(op)
@@ -60,7 +56,8 @@
                  // making div vissible
          
                 input1.style.display ="none";
-                document.getElementById("at").innerHTML = p2n+" Please Write The Answer In Input.";
+                document.getElementById("at").innerHTML = pn+" Please Write The Answer In Input.";
+                input1.value = "";
           }
         }
       })
@@ -76,15 +73,13 @@
         if(questiont == 1){
           questiont = 2;
           score2++
-          console.log(p1n+" got "+score2+" points")
-          document.getElementById("p2_n").innerHTML = p2up;
+          console.log(p2n+" got "+score2+" points")
           setupq()
         }
         else{
           questiont = 1;
           score1++
-          console.log(p2n+" got "+score2+" points")
-          document.getElementById("p1_n").innerHTML = p1up;
+          console.log(p1n+" got "+score1+" points")
           setupq()
         }    
       }else{
@@ -116,6 +111,7 @@ function ans(op,n1,n2){
       break;
     default :
       result = "Error"
+      console.log(op)
   }
 
   return result;
@@ -176,11 +172,13 @@ function easy1(op,n1,n2){
 function setupq(){
     
   // player name placing
-    document.getElementById("p1_n").innerHTML = p1up;
-    document.getElementById("p2_n").innerHTML = p2up;
     
     qturn =   document.getElementById("qat")
     
+    document.getElementById("p2_n").innerHTML = score2+" Points For "+p2n;
+    document.getElementById("p1_n").innerHTML = score1+" Points For "+p1n;
+
+    input2.value = "";
     
   if( questiont == 1 ){
     qturn.innerHTML = p1n+s+"Please Enter The Question In Folloing Input.";
@@ -188,12 +186,14 @@ function setupq(){
     document.getElementById("at").style.display = "none";
     document.getElementById("qat").style.display = "block";
     input1.style.display = "block";
+    pn = p2n;
   }
   else{
-    qturn.innerHTML = p1n+s+"Please Enter The Question In Folloing Input.";
+    qturn.innerHTML = p2n+s+"Please Enter The Question In Folloing Input.";
     document.getElementById("output").style.display = "none";
     document.getElementById("at").style.display = "none";
     document.getElementById("qat").style.display = "block";
     input1.style.display = "block";
+    pn = p1n;
   }
 }
